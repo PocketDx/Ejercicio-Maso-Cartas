@@ -15,9 +15,9 @@ body {
     margin: 10px;
 }
 
-.card button {
+.card img {
     display: block;
     width: 100px;
     height: 150px;
-    font-size: 20px;
+    object-fit: cover;
 }
