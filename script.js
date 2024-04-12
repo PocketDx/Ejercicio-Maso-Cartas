@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         localStorage.setItem('username', username);
         
         // Redireccionar a la pagina del juego
-        window.location.href = 'juego.html';
+        window.location.href = 'alternativo.html';
     } else {
         // Mostrar mensaje de error
         document.getElementById('errorMessage').textContent = 'Credenciales incorrectas';
