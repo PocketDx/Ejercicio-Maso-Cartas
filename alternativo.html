@@ -1,0 +1,138 @@
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Cartas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cartas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .carta {
+            margin: 10px;
+        }
+
+        .carta button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .carta img {
+            width: 150px;
+            height: 200px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Juego de Cartas</h1>
+        <div class="cartas">
+            <div class="carta">
+                <button onclick="incrementarCarta('As')">
+                    <img src="images/1.png" alt="As">
+                </button>
+            </div>
+            <div class="carta">
+                <button onclick="incrementarCarta('Dos')">
+                    <img src="images/2.png" alt="Dos">
+                </button>
+            </div>
+            <div class="carta">
+                <button onclick="incrementarCarta('Tres')">
+                    <img src="images/3.png" alt="Tres">
+                </button>
+            </div>
+        </div>
+        
+        <h2>Tabla de Cartas</h2>
+        <table id="tablaCartas">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de la Carta</th>
+                    <th>Número de Cartas</th>
+                </tr>
+            </thead>
+            <tbody id="tablaBody"><tr>
+                    <td>1</td>
+                    <td>As</td>
+                    <td></td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>Dos</td>
+                    <td></td>
+                </tr><tr>
+                    <td>3</td>
+                    <td>Tres</td>
+                    <td></td>
+                </tr></tbody>
+        </table>
+    </div>
+
+    <script>
+        const cartas = [
+            { id: 1, nombre: "As", cantidad: 0 },
+            { id: 2, nombre: "Dos", cantidad: 0 },
+            { id: 3, nombre: "Tres", cantidad: 0 }
+        ];
+
+        function incrementarCarta(nombre) {
+            const carta = cartas.find(carta => carta.nombre === nombre);
+            carta.cantidad++;
+            actualizarTabla();
+        }
+
+        function actualizarTabla() {
+            const tablaBody = document.getElementById("tablaBody");
+            tablaBody.innerHTML = "";
+            cartas.forEach(carta => {
+                const fila = document.createElement("tr");
+                fila.innerHTML = `
+                    <td>${carta.id}</td>
+                    <td>${carta.nombre}</td>
+                    <td>${carta.cantidad}</td>
+                `;
+                tablaBody.appendChild(fila);
+            });
+        }
+    </script>
+
+
+</body></html>

@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form input {
+    margin-right: 10px;
+}
+
+.cartas-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.carta-btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.tabla-container {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table th, table td {
+    padding: 8px 16px;
+}
