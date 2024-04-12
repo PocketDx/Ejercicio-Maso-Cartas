@@ -12,8 +12,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         // Almacenar el nombre de usuario en localStorage
         localStorage.setItem('username', username);
         
-        // Redireccionar a la página index.html
-        window.location.href = 'index.html';
+        // Redireccionar a la pagina del juego
+        window.location.href = 'juego.html';
     } else {
         // Mostrar mensaje de error
         document.getElementById('errorMessage').textContent = 'Credenciales incorrectas';
